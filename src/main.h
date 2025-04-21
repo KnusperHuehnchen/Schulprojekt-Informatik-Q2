@@ -40,13 +40,25 @@ void loop() {
             }
             pixels.show();
             if (r == 14 && l == 15){
-               animation = 1;
+                animation = 1;
             }
         }
     }
     else  {    //// hier kommt dann der fortlaufende Code
         pixels.clear();    //zum testen werden einmal alle LEDs ausgeschaltet
         pixels.show();
+        Serial.print ("button: ");
+        Serial.println (digitalRead(button));
+        if (digitalRead(button) == 0) {
+            for (int i = 0; i < 30; i++) {
+                pixels.setPixelColor(i, pixels.Color(0, 0, 255));
+                pixels.show();
+            }
+        }
+        else {
+            pixels.clear();
+            pixels.show();
+        }
     }
 }
 #endif //MAIN_H
