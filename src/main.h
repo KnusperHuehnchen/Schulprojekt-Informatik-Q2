@@ -12,6 +12,7 @@ int button = 2;
 unsigned long previousMillis = 0;
 const long interval = 100;
 
+int animation = 0;
 int r = 30;
 int l = 0;
 
@@ -23,21 +24,28 @@ void setup() {
     pinMode(button,INPUT_PULLUP);
 }
 void loop() {
-    unsigned long currentMillis = millis();
+    if (animation == 0) {
+        unsigned long currentMillis = millis();
 
-    if (currentMillis - previousMillis >= interval) { //diese wird nur einmal ausgeführt !
-        previousMillis = currentMillis;
+        if (currentMillis - previousMillis >= interval) {
+            previousMillis = currentMillis;
 
-        if (r >= 15) {
-            pixels.setPixelColor(r, pixels.Color(0, 0, 255));
-            r--;
+            if (r >= 15) {
+                pixels.setPixelColor(r, pixels.Color(0, 0, 255));
+                r--;
+            }
+            if (l < 15) {
+                pixels.setPixelColor(l, pixels.Color(0, 0, 255));
+                l++;
+            }
+            pixels.show();
+            if (r == 14 && l == 15){
+               animation = 1;
+            }
         }
-
-        if (l < 15) {
-            pixels.setPixelColor(l, pixels.Color(0, 0, 255));
-            l++;
-        }
-
+    }
+    else  {    //// hier kommt dann der fortlaufende Code
+        pixels.clear();    //zum testen werden einmal alle LEDs ausgeschaltet
         pixels.show();
     }
 }
