@@ -17,7 +17,6 @@ int r = 30;
 int l = 0;
 
 void setup() {
-    Serial.begin(9600);
     pixels.begin();
     pixels.clear();
     pixels.setBrightness(255);
@@ -44,9 +43,7 @@ void loop() {
             }
         }
     }
-    else  {    //hier kommt dann der fortlaufende Code
-        Serial.print ("button: ");
-        Serial.println (digitalRead(button));
+    else  {
         if (digitalRead(button) == 0) {
             for (int i = 0; i < 30; i++) {
                 pixels.setPixelColor(i, pixels.Color(0, 0, 255));
