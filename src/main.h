@@ -44,9 +44,7 @@ void loop() {
             }
         }
     }
-    else  {    //// hier kommt dann der fortlaufende Code
-        pixels.clear();    //zum testen werden einmal alle LEDs ausgeschaltet
-        pixels.show();
+    else  {    // hier kommt dann der fortlaufende Code
         Serial.print ("button: ");
         Serial.println (digitalRead(button));
         if (digitalRead(button) == 0) {
