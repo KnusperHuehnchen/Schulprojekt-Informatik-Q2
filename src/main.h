@@ -44,7 +44,7 @@ void loop() {
             }
         }
     }
-    else  {    // hier kommt dann der fortlaufende Code
+    else  {    //hier kommt dann der fortlaufende Code
         Serial.print ("button: ");
         Serial.println (digitalRead(button));
         if (digitalRead(button) == 0) {
