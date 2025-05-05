@@ -14,6 +14,7 @@ unsigned long previousMillis = 0; //überprüfen !!!
 const long interval = 100; //überprüfen !!!
 
 //variablen
+int stay_on = 0;
 int animation = 0;
 int r = 30;
 int l = 0;
@@ -43,15 +44,22 @@ void loop () {
         }
     }
     else {
-        if (digitalRead(button) == 0) {
-            for (int i = 0; i < 30; i++) {
-                pixels.setPixelColor(i, pixels.Color(0, 0, 255));
+        if (stay_on == 0) {
+            if (digitalRead(button) == 0){
+                stay_on = 1;
             }
-            pixels.show();
         }
         else {
-            pixels.clear();
-            pixels.show();
+            if (digitalRead(button) == 0) {
+                for (int i = 0; i < 30; i++) {
+                    pixels.setPixelColor(i, pixels.Color(0, 0, 255));
+                }
+                pixels.show();
+            }
+            else {
+                pixels.clear();
+                pixels.show();
+            }
         }
     }
 }
