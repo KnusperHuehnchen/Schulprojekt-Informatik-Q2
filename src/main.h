@@ -18,7 +18,6 @@ void setup () {
     pixels.begin ();
     pinMode(button, INPUT_PULLUP);
 }
-
 void loop () {
     if (animation == 0) {
         unsigned long currentMillis = millis();
