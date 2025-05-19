@@ -53,12 +53,12 @@ void loop () {
     }
     else {
         if (stay_on == 0) {
-            if (digitalRead(button) == 0){
+            if (analogRead(button) > 200){
                 stay_on = 1;
             }
         }
         else {
-            if (digitalRead(button) == 0) {
+            if (analogRead(button) > 200) {
                 for (int i = 0; i < 30; i++) {
                     pixels.setPixelColor(i, pixels.Color(red, green, blue));
                 }
