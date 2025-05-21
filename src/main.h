@@ -28,6 +28,7 @@ void setup () {
     pinMode(potiR, INPUT);
     pinMode(potiG, INPUT);
     pinMode(potiB, INPUT);
+  Serial.begin(9600);
 }
 void loop () {
     int red = analogRead(potiR)/4;
@@ -52,23 +53,27 @@ void loop () {
         }
     }
     else {
-        if (stay_on == 0) {
-            if (analogRead(button) > 200){
+      Serial.println(digitalRead(button));
+        if (analogRead(button) > 200 && stay_on == 0){
                 stay_on = 1;
             }
-        }
-        else {
-            if (analogRead(button) > 200) {
-                for (int i = 0; i < 30; i++) {
+        else if (analogRead(button) > 200 && stay_on == 1){
+               for (int i = 0; i < 30; i++) {
                     pixels.setPixelColor(i, pixels.Color(red, green, blue));
                 }
                 pixels.show();
             }
-            else {
+        else if (analogRead(button) > 200 && stay_on == 1){
                 pixels.clear();
                 pixels.show();
             }
-        }
+      	else if (analogRead(button) > 200 && stay_on == 0){
+                 for (int i = 0; i < 30; i++) {
+                    pixels.setPixelColor(i, pixels.Color(red, green, blue));
+                }
+                pixels.show();
+            }
     }
+
 }
 #endif //MAIN_H
