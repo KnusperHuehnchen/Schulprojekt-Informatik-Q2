@@ -7,10 +7,11 @@
 #include <Adafruit_NeoPixel.h>
 //pins
 Adafruit_NeoPixel pixels(30, 3, NEO_GRB + NEO_KHZ800);
-int button = 2;
-int potiR = A0;
-int potiG = A1;
-int potiB = A2;
+int piezo = 2;
+int potiR = A0; //ESP32 4
+int potiG = A1; //ESP32 5
+int potiB = A2; //ESP32 6
+int button = 11;
 
 //millis
 unsigned long previousMillis = 0; //überprüfen !!!
@@ -21,6 +22,7 @@ int stay_on = 0;
 int animation = 0;
 int r = 30;
 int l = 0;
+int lever = 0;
 
 void setup () {
     pixels.begin ();
@@ -31,49 +33,74 @@ void setup () {
   Serial.begin(9600);
 }
 void loop () {
-    int red = analogRead(potiR)/4;
-    int green = analogRead(potiG)/4;
-    int blue = analogRead(potiB)/4;
-    if (animation == 0) {
-        unsigned long currentMillis = millis();
-        if (currentMillis - previousMillis >= interval) {
-            previousMillis = currentMillis;
-            if (r >= 15) {
-                pixels.setPixelColor(r, pixels.Color(red, green ,blue));
-                r--;
-            }
-            if (l < 15) {
-                pixels.setPixelColor(l, pixels.Color(red, green ,blue));
-                l++;
-            }
-            pixels.show();
-            if (r== 14 && l == 15) {
-                animation = 1;
-            }
-        }
-    }
-    else {
-      Serial.println(digitalRead(button));
-        if (analogRead(button) > 200 && stay_on == 0){
-                stay_on = 1;
-            }
-        else if (analogRead(button) > 200 && stay_on == 1){
-               for (int i = 0; i < 30; i++) {
-                    pixels.setPixelColor(i, pixels.Color(red, green, blue));
+        int red = analogRead(potiR)/4;
+        int green = analogRead(potiG)/4;
+        int blue = analogRead(potiB)/4;
+if (digitalRead(button) == 0 && lever == 0) {
+  lever ++;
+  delay(2000);
+  }
+else if (digitalRead(button) == 0 && lever == 1) {
+    lever ++;
+    delay(2000);
+}
+else if (digitalRead(button) == 0 && lever == 2) {
+    lever = 0;
+    delay(2000);
+}
+  switch (lever) {
+    case 0:
+      for (int i = 0; i < 30; i++) {
+            pixels.setPixelColor(i, pixels.Color(0, 0, 255));
+      }
+      pixels.show();
+      break;
+    case 1:
+        if (animation == 0) {
+            unsigned long currentMillis = millis();
+            if (currentMillis - previousMillis >= interval) {
+                previousMillis = currentMillis;
+                if (r >= 15) {
+                    pixels.setPixelColor(r, pixels.Color(red, green ,blue));
+                    r--;
+                }
+                if (l < 15) {
+                    pixels.setPixelColor(l, pixels.Color(red, green ,blue));
+                    l++;
                 }
                 pixels.show();
+                if (r== 14 && l == 15) {
+                    animation = 1;
+                }
             }
-        else if (analogRead(button) > 200 && stay_on == 1){
+        }
+        else {
+            Serial.println(digitalRead(piezo));
+            if (analogRead(button) > 200 && stay_on == 0){
+                stay_on = 1;
+            }
+            else if (analogRead(piezo) > 200 && stay_on == 1){
+               for (int i = 0; i < 30; i++) {
+                   pixels.setPixelColor(i, pixels.Color(red, green, blue));
+               }
+               pixels.show();
+            }
+            else if (analogRead(piezo) > 200 && stay_on == 1){
                 pixels.clear();
                 pixels.show();
             }
-      	else if (analogRead(button) > 200 && stay_on == 0){
-                 for (int i = 0; i < 30; i++) {
+      	    else if (analogRead(piezo) > 200 && stay_on == 0){
+                for (int i = 0; i < 30; i++) {
                     pixels.setPixelColor(i, pixels.Color(red, green, blue));
                 }
                 pixels.show();
             }
-    }
-
+        }
+        break;
+    case 2:
+     pixels.clear();
+     pixels.show();
+     break;
+  }
 }
 #endif //MAIN_H
