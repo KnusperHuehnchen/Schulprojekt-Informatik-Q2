@@ -1,0 +1,1 @@
+![Schaltplan LED-Streifen](Bilder/Schaltplan.png)
