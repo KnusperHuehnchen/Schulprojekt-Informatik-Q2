@@ -1,16 +1,19 @@
 # Schulprojekt-Informatik-Q2
 # Q1 Projekt: Licht am Schlagzeug
 
-## Projekt
+## Projekt &nbsp;<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" /> <img src="https://img.shields.io/badge/ESP32-000000?style=for-the-badge&logo=espressif&logoColor=white" /> <img src="https://img.shields.io/badge/Adafruit_NeoPixel-00C3E6?style=for-the-badge&logo=adafruit&logoColor=white" /> <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
 
-Mein Ziel ist es, an meiner Snare einen voll funktionsfähigen LED-Streifen anzubringen. Der LED-Streifen soll mithilfe von 3 Potis ansteuerbar sein. Je ein Poti für eine Farbe. Diese Potis sind dennoch nur ein Bestandteil von 3 Modis. Es gibt 3 Modi:
+Mein Ziel ist es, an meiner Snare einen voll funktionsfähigen LED-Streifen anzubringen. Der LED-Streifen soll mithilfe  
+von 3 Potis ansteuerbar sein. Je ein Poti für eine Farbe. Diese Potis sind dennoch nur ein Bestandteil von 3 Modis.  
+Es gibt 3 Modi:
 
 1. **Lichtschlageffekt mit frei wählbarer Farbe**
 2. **Lichtschlageffekt mit automatischem Farbwechsel**
 3. **Dauerlicht ohne Effekte**
 
-**Optional:**  
-\- Mit Homeassistant verbinden (v.2)
+**Optional:**  <img src="https://img.shields.io/badge/Home_Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white" />
+
+\- Mit Homeassistant verbinden (v.2) 
 
 [→ Zur Bauanleitung (construction.md)](construction.md)
 
@@ -24,7 +27,7 @@ Mein Ziel ist es, an meiner Snare einen voll funktionsfähigen LED-Streifen anzu
 - Sensoren, Schalter und Licht miteinander abstimmen
 - GitHub zu erkunden
 
-### Software
+### Software  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" /> <img src="https://img.shields.io/badge/JetBrains-CLion-000000?style=for-the-badge&logo=clion&logoColor=white" /> <img src="https://img.shields.io/badge/PlatformIO-FF6600?style=for-the-badge&logo=platformio&logoColor=white" />
 
 - Mit RGB programmieren
 - millis
