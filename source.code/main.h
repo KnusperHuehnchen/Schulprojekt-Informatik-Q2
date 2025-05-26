@@ -75,9 +75,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
             }
         }
         else {
-            Serial.println(digitalRead(piezo));
-            if (analogRead(button) > 200 && stay_on == 0){
-                stay_on = 1;
+            Serial.println(analogRead(piezo));
             }
             else if (analogRead(piezo) > 200 && stay_on == 1){
                for (int i = 0; i < 30; i++) {
@@ -85,7 +83,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
                }
                pixels.show();
             }
-            else if (analogRead(piezo) > 200 && stay_on == 1){
+            else if (analogRead(piezo) < 200 && stay_on == 1){
                 pixels.clear();
                 pixels.show();
             }
@@ -93,6 +91,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
                 for (int i = 0; i < 30; i++) {
                     pixels.setPixelColor(i, pixels.Color(red, green, blue));
                 }
+      	        stay_on = 1;
                 pixels.show();
             }
         }
