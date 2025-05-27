@@ -8,9 +8,9 @@
 //pins
 Adafruit_NeoPixel pixels(30, 3, NEO_GRB + NEO_KHZ800);
 int piezo = 2;
-int potiR = A0; //ESP32 4
-int potiG = A1; //ESP32 5
-int potiB = A2; //ESP32 6
+int potiR = 4; //ESP32 4
+int potiG = 5; //ESP32 5
+int potiB = 6; //ESP32 6
 int button = 11;
 
 //millis
@@ -33,20 +33,20 @@ void setup () {
   Serial.begin(9600);
 }
 void loop () {
-        int red = analogRead(potiR)/4;
-        int green = analogRead(potiG)/4;
-        int blue = analogRead(potiB)/4;
+        int red = analogRead(potiR)/15;
+        int green = analogRead(potiG)/15;
+        int blue = analogRead(potiB)/15;
 if (digitalRead(button) == 0 && lever == 0) {
   lever ++;
-  delay(2000);
+  delay(200);
   }
 else if (digitalRead(button) == 0 && lever == 1) {
     lever ++;
-    delay(2000);
+    delay(200);
 }
 else if (digitalRead(button) == 0 && lever == 2) {
     lever = 0;
-    delay(2000);
+    delay(200);
 }
   switch (lever) {
     case 0:
@@ -54,6 +54,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
             pixels.setPixelColor(i, pixels.Color(0, 0, 255));
       }
       pixels.show();
+      animation = 0;
       break;
     case 1:
         if (animation == 0) {
@@ -75,9 +76,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
             }
         }
         else {
-            Serial.println(analogRead(piezo));
-            }
-            else if (analogRead(piezo) > 200 && stay_on == 1){
+            if (analogRead(piezo) > 200 && stay_on == 1){
                for (int i = 0; i < 30; i++) {
                    pixels.setPixelColor(i, pixels.Color(red, green, blue));
                }
