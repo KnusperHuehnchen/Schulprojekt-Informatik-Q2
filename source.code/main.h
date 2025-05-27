@@ -38,6 +38,10 @@ void loop () {
         int blue = analogRead(potiB)/15;
 if (digitalRead(button) == 0 && lever == 0) {
   lever ++;
+  animation = 0;
+  stay_on = 0;
+  r = 30;
+  l = 0;
   delay(200);
   }
 else if (digitalRead(button) == 0 && lever == 1) {
@@ -54,7 +58,7 @@ else if (digitalRead(button) == 0 && lever == 2) {
             pixels.setPixelColor(i, pixels.Color(0, 0, 255));
       }
       pixels.show();
-      animation = 0;
+      Serial.println(animation);
       break;
     case 1:
         if (animation == 0) {
@@ -96,8 +100,11 @@ else if (digitalRead(button) == 0 && lever == 2) {
         }
         break;
     case 2:
-     pixels.clear();
-     pixels.show();
+      for (int i = 0; i < 30; i++) {
+            pixels.setPixelColor(i, pixels.Color(0, 255, 0));
+      }
+      pixels.show();
+      Serial.println(animation);
      break;
   }
 }

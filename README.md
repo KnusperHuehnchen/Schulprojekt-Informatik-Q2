@@ -55,4 +55,4 @@ Es gibt 3 Modi:
 - **setPixelColor()**: Setzt die Farbe einer LED
 - **show()**: Überträgt die Farben auf den LED-Streifen
 - **clear()**: Schaltet alle LEDs aus
-- **millis()**: Gibt die vergangene Zeit seit Programmstart zurück## Projekt
+- **millis()**: Gibt die vergangene Zeit seit Programmstart zurück
