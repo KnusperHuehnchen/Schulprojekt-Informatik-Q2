@@ -8,14 +8,14 @@ von 3 Potis ansteuerbar sein. Je ein Poti für eine Farbe. Diese Potis sind denn
 Es gibt 3 Modi:
 
 1. **Lichtschlageffekt mit frei wählbarer Farbe**
-2. **Lichtschlageffekt mit automatischem Farbwechsel**
-3. **Dauerlicht ohne Effekte**
+2. **Dauerlicht ohne Effekte**
+3. **Licht ist aus**
 
 **Optional:**  <img src="https://img.shields.io/badge/Home_Assistant-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white" />
 
 \- Mit Homeassistant verbinden (v.2) 
 
-[→ Zur Bauanleitung (construction.md)](construction.md)
+[→ Homeassistant Anleitung (homeassistant.integration/README.md)](homeassistant.integration/README.md)
 
 ---
 
@@ -25,12 +25,13 @@ Es gibt 3 Modi:
 
 - LED-Streifen in C++ benutzen
 - Sensoren, Schalter und Licht miteinander abstimmen
-- GitHub zu erkunden
+
+[→ Zur Bauanleitung (construction.md)](construction.md)
 
 ### Software  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" /> <img src="https://img.shields.io/badge/JetBrains-CLion-000000?style=for-the-badge&logo=clion&logoColor=white" /> <img src="https://img.shields.io/badge/PlatformIO-FF6600?style=for-the-badge&logo=platformio&logoColor=white" />
 
 - Mit RGB programmieren
-- millis
+- GitHub zu erkunden
 - via WLAN/Zigbee den ESP32 benutzen über Homeassistant (v.2)
 - Vokabular von C++ (siehe unten)
 

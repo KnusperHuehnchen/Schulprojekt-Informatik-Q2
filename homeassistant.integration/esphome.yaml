@@ -1,0 +1,44 @@
+esphome:
+  name: projekt
+  friendly_name: projekt
+
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "DEIN_API_KEY_HIER_EINFÜGEN"
+
+ota:
+  - platform: esphome
+    password: "DEIN_OTA_PASSWORT_HIER_EINFÜGEN"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Projekt Fallback Hotspot"
+    password: "DEin_Fallback_Passwort_Hier_Einfügen"
+
+captive_portal:
+
+#Eigenschaft (folgende Zeilen sind für ESP32 C6 DevkitC-1 extra angepasst)
+light:
+  - platform: esp32_rmt_led_strip
+    name: "LED Strip"
+    chipset: ws2812
+    pin: GPIO3
+    num_leds: 240
+    rgb_order: GRB
+    effects:
+      - random
+      - strobe
+      - flicker

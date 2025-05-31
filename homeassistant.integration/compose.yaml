@@ -1,0 +1,20 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+      - ./share:/share
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+
+  esphome:
+    image: ghcr.io/esphome/esphome
+    container_name: esphome
+    network_mode: host
+    volumes:
+      - ./esphome-server:/config
+    restart: unless-stopped
