@@ -1,5 +1,5 @@
 # Schulprojekt-Informatik-Q2
-# Q2 Projekt: Licht am Schlagzeug
+# Drum Lights – Das beleuchtete Schlagzeug
 
 ## Projekt &nbsp;<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" /> <img src="https://img.shields.io/badge/ESP32-000000?style=for-the-badge&logo=espressif&logoColor=white" /> <img src="https://img.shields.io/badge/Adafruit_NeoPixel-00C3E6?style=for-the-badge&logo=adafruit&logoColor=white" /> <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
 
