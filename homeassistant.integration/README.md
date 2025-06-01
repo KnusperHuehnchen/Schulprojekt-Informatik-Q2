@@ -27,3 +27,5 @@ https://esphome.io/guides/getting_started_hassio#device-builder-interface
 
 Konfigurationsdatei (YAML) in ESPHome  
 → siehe [`esphome.yaml`](esphome.yaml)
+
+<img src="../pictures/ESPHome-Web-Client.png" alt="ESPHome Web Client" width="350"/>

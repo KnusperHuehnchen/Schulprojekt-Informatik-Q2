@@ -106,5 +106,6 @@ void loop () {
       }
       break;
   }
+  Serial.println(analogRead(piezo));
 }
 #endif //MAIN_H
