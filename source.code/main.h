@@ -74,21 +74,21 @@ void loop () {
         }
       }
       else {
-        if (analogRead(piezo) > 200 && stay_on == 1){
+        if (analogRead(piezo) < 200 && stay_on == 0){
           for (int i = 0; i < 60; i++) {
             pixels.setPixelColor(i, pixels.Color(red, green, blue));
           }
           pixels.show();
         }
-        else if (analogRead(piezo) < 200 && stay_on == 1){
+        else if (analogRead(piezo) > 200 && stay_on == 0){
           pixels.clear();
           pixels.show();
+          stay_on = 1;
         }
-      	else if (analogRead(piezo) > 200 && stay_on == 0){
+      	else if (analogRead(piezo) > 200 && stay_on == 1){
           for (int i = 0; i < 60; i++) {
             pixels.setPixelColor(i, pixels.Color(red, green, blue));
           }
-      	  stay_on = 1;
           pixels.show();
         }
       }
