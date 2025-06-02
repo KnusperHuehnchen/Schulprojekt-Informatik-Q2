@@ -28,6 +28,7 @@ int old = 1; // Flankenerkennung
 void setup () {
   pixels.begin ();
   pinMode(button, INPUT_PULLUP);
+  pinMode(piezo, INPUT);
   pinMode(potiR, INPUT);
   pinMode(potiG, INPUT);
   pinMode(potiB, INPUT);
