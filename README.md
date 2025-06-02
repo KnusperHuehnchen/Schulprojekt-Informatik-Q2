@@ -28,7 +28,7 @@ Es gibt 3 Modi:
 
 [→ Zur Bauanleitung (construction.md)](construction.md)
 
-### Software  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" /> <img src="https://img.shields.io/badge/JetBrains-CLion-000000?style=for-the-badge&logo=clion&logoColor=white" /> <img src="https://img.shields.io/badge/PlatformIO-FF6600?style=for-the-badge&logo=platformio&logoColor=white" />
+### Software  <img src="https://img.shields.io/badge/Arduino_IDE-00979D?style=for-the-badge&logo=arduino&logoColor=white" /> <img src="https://img.shields.io/badge/JetBrains-CLion-000000?style=for-the-badge&logo=clion&logoColor=white" />
 
 - Mit RGB programmieren
 - GitHub zu erkunden

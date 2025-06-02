@@ -85,14 +85,18 @@ void loop () {
           pixels.show();
           stay_on = 1;
         }
-      	else if (analogRead(piezo) > 200 && stay_on == 1){
+        else if (analogRead(piezo) > 200 && stay_on == 1){
           for (int i = 0; i < 60; i++) {
             pixels.setPixelColor(i, pixels.Color(red, green, blue));
           }
           pixels.show();
         }
+        else if (analogRead(piezo) < 200 && stay_on == 1){
+          pixels.clear();
+          pixels.show();
+        }
       }
-      break;
+    break;
     case 1:
       for (int i = 0; i < 60; i++) {
         pixels.setPixelColor(i, pixels.Color(0, 0, 255));
