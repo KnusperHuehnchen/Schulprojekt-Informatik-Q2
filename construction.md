@@ -35,7 +35,9 @@
 
 - LED Streifen _(Länge muss im Code angegeben werden)_
 
+```c++
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + Signal-Frequenz);
+```
 
 - <div style="display: flex; align-items: center;">
   <span>3 Potentiometer &rarr; für die Modi und die Farben</span>
