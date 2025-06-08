@@ -1,0 +1,65 @@
+# .gitignore für Drum Lights Projekt
+
+# Build-Verzeichnisse
+build/
+bin/
+.build/
+
+# IDE-spezifische Dateien
+.vscode/
+.vs/
+*.vcxproj*
+*.sln
+
+# CLion
+.idea/
+cmake-build-*/
+
+# Kompilierte Dateien
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Debug-Dateien
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Temporäre Dateien
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Log-Dateien
+*.log
+
+# Arduino/PlatformIO spezifisch
+.pio/
+.pioenvs/
+.piolibdeps/
+lib/
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+
+# ESP32 spezifisch
+build/
+sdkconfig
+sdkconfig.old
+
+# Backup-Dateien
+*.bak
+*.backup
+
+# Dokumentations-Build-Dateien
+docs/_build/
+docs/html/
+docs/latex/
+
+# Test-Ausgaben
+test_results.txt
+coverage/
