@@ -26,7 +26,7 @@ int lever = 0; // Moduswechsel
 int old = 1; // Flankenerkennung
 
 void setup () {
-  pixels.begin ();
+  pixels.begin (); //Initialisiert die Hardware-Schnittstelle für die LEDs
   pinMode(button, INPUT_PULLUP);
   pinMode(piezo, INPUT);
   pinMode(potiR, INPUT);
